@@ -1,0 +1,77 @@
+@mixin colDir(){
+  display: flex;
+  flex-direction: column;
+}
+@mixin textMix(){
+  color: #fff;
+  font-size: 16px;
+  opacity: .5;
+}
+@mixin colorForActual(){
+  color: #fff;
+  font-size: 20px;
+}
+
+.air{
+  background-color: #0c0c12;
+  padding: 2rem;
+  border-radius: 10px;
+  .air__subtitle{
+    color: #fff;
+    opacity: .5;
+    text-transform: uppercase;
+  }
+  .air__temp{
+    .temp__content{
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      .content__left{
+        .left__top{
+          @include colDir();
+          gap: 10px;
+          .top__text{
+            @include textMix();
+          }
+          .top__feel{
+            @include colorForActual();
+          }
+        }
+        .left__under{
+          margin-top: 30px;
+          @include colDir();
+          gap: 10px;
+          .under__text{
+            @include textMix();
+          }
+          .under__max{
+            @include colorForActual()
+          }
+        }
+      }
+      .content__right{
+        .right__top{
+          @include colDir();
+          gap: 10px;
+          .top__text{
+            @include textMix()
+          }
+          .top__speed{
+            @include colorForActual()
+          }
+        }
+        .right__under{
+          margin-top: 30px;
+          @include colDir();
+          gap: 10px;
+          .under__text{
+            @include textMix();
+          }
+          .under__min{
+            @include colorForActual()
+          }
+        }
+      }
+    }
+  }
+}

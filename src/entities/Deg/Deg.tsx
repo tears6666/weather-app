@@ -1,28 +1,37 @@
 import { useEffect } from 'react'
+import { IoSunny } from 'react-icons/io5'
 import { useWeatherStore } from '../../store/store'
 import styles from './Deg.module.scss'
 
-export default function Deg() { 
-  const items = useWeatherStore(state => state.items)
-  const fetchDeg = useWeatherStore(state => state.fetchWeather)
-  useEffect(() => {
-    try {
-      fetchDeg()
-    } catch (error) {
-      console.log(error)
-    }
-  }, [fetchDeg])
-  return(
-    <div className={styles.deg}>
-      {items.map(item => (
-        <div className={styles.deg__card}>
-          <div className={styles.card__top}>
-            <h1 className={styles.top__title}>{item.name}</h1>
-            <p className={styles.top__text}>{item.description}</p>
-          </div>
-          <h2 className={styles.card__subtitle}>{item.temp}</h2>
-        </div>
-      ))}
-    </div>
-  )
+export default function Deg() {
+	const weather = useWeatherStore(state => state.items)
+	const isLoading = useWeatherStore(state => state.isLoading)
+	const fetchWeather = useWeatherStore(state => state.fetchWeather)
+
+	useEffect(() => {
+		try {
+			fetchWeather()
+		} catch (error) {
+			console.log(error)
+		}
+	}, [fetchWeather])
+
+	if (isLoading) return <h3>Loading...</h3>
+
+	return (
+		<div className={styles.deg}>
+			{weather.map(w => (
+				<div className={styles.deg__card}>
+					<div className={styles.card__content}>
+						<div className={styles.content__top}>
+							<h2 className={styles.top__subtitle}>{w.name}</h2>
+							<p className={styles.top__text}>{w.description}</p>
+						</div>
+						<p className={styles.content__under}>{w.temp}°</p>
+					</div>
+					<IoSunny className={styles.card__icon} />
+				</div>
+			))}
+		</div>
+	)
 }

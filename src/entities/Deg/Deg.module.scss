@@ -1,0 +1,35 @@
+.deg{
+  margin-top: 5rem;
+  .deg__card{
+    display: flex;
+    align-items: center;
+    gap: 20rem;
+    .card__content{
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+      .content__top{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .top__subtitle{
+          color: #fff;
+          font-size: 70px;
+        }
+        .top__text{
+          color: #fff;
+          opacity: .5;
+          font-size: 18px;
+        }
+      }
+      .content__under{
+        font-size: 50px;
+        color: #fff;
+      }
+    }
+    .card__icon{
+      color: #fff;
+      font-size: 20rem;
+    }
+  }
+}

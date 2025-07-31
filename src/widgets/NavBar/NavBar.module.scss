@@ -1,11 +1,11 @@
 .navbar{
   padding: 1.5rem;
   display: flex;
+  width: 70px;
   flex-direction: column;
   background-color: #0c0c12;
-  position: fixed;
   align-items: center;
-  height: 92vh;
+  height: 91.5vh;
   justify-content: space-between;
   border-radius: 20px;
   .navbar__logo{
