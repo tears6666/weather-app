@@ -1,0 +1,28 @@
+.settings{
+  margin-top: 2rem;
+  .settings__title{
+    color: #fff;
+    font-size: 4rem;
+  }
+  .settings__theme{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5rem;
+    background-color: #0c0c12;
+    width: 400px;
+    border-radius: 5px;
+    .theme__content{ 
+
+      .content__change{
+        font-size: 20px;
+        color: #fff;
+      }
+      .content__text{
+        color: #fff;
+        opacity: 0.5;
+      }
+    }
+  }
+}
